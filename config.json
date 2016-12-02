@@ -1,0 +1,17 @@
+{
+    "smtp_options": {
+        "host": "mail.catapult.ro",
+        "port": 587,
+        "secure": false,
+        "requireTLS": true,
+        "tls": {
+            "requestCert": false,
+            "rejectUnauthorized": false
+        },
+        "authMethod": "plain",
+        "auth": {
+            "user": "test@catapult.ro",
+            "pass": "onelogic951"
+        }
+    }
+}

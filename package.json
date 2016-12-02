@@ -1,7 +1,7 @@
 {
   "name": "website_watchdog",
   "version": "1.0.0",
-  "description": "This script runs periodically and watch if a given website is available or not. If the site is not available than sends an email to given email address",
+  "description": "This program runs periodically and watch if a given website is available or not. If the site is not available than sends an email to given email address",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
