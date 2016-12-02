@@ -41,7 +41,7 @@ setInterval(()=>{
         let text = date.toLocaleString()+", statuscode: "+statusCode+ ", time elapsed: "+parseInt(this.getInfo( 'TOTAL_TIME' ))*1000
         logger.writeLog(text)
 
-        if(stausCode == 404 || statusCode == 500){
+        if(statusCode == 404 || statusCode == 500){
             sendEmail(text)
         }
 
