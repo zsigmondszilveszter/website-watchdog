@@ -17,14 +17,15 @@ let mailOptions = {
 let counter = 0;
 
 let sendEmail = text => {
-    let date = new Date();
+
     mailOptions.text = text; // plaintext body
     mailOptions.html = '<b>'+text+'</b>'; // html body
     mailer.sendMail(mailOptions, function(error, info){
         if(error){
-            return console.log(error);
+            logger.writeLog('Message NOT sent ERROR: ' + error)
+            return error
         }
-        console.log('Message sent: ' + info.response);
+        logger.writeLog('Message sent: ' + info.response)
     });
 }
 
@@ -48,7 +49,7 @@ setInterval(()=>{
     });
 
     curl.on( 'error',error => {
-
+        let date = new Date();
         let text = date.toLocaleString()+', ' + websiteurl+' is down, connection timeout set to '+parseInt(timeout/1000)+' sec'
 
         if(++counter > 1){
@@ -60,4 +61,4 @@ setInterval(()=>{
         curl.close.bind( curl )
     });
     curl.perform();
-},20000)
+},60000)
