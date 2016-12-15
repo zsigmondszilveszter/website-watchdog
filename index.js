@@ -1,7 +1,7 @@
 const websiteurl = 'https://www.cashinfo.com';
 const timeout = 60000; // msec max timeout
 const to = 'szilveszter@onelogic.fr, zmathe@onelogic.fr';
-const to2 = 'pmpeugnet@cashinfo.com';
+const to2 = 'szilveszter@onelogic.fr, zmathe@onelogic.fr, pmpeugnet@cashinfo.com';
 
 const Curl = require( 'node-libcurl' ).Curl;
 const nodemailer = require('nodemailer');
