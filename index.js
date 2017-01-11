@@ -1,7 +1,7 @@
 const websiteurl = 'https://www.cashinfo.com';
 const timeout = 60000; // msec max timeout
 const to = 'szilveszter@onelogic.fr, zmathe@onelogic.fr';
-const to2 = 'szilveszter@onelogic.fr, zmathe@onelogic.fr, pmpeugnet@cashinfo.com';
+const to2 = 'szilveszter@onelogic.fr, zmathe@onelogic.fr,';
 
 const Curl = require( 'node-libcurl' ).Curl;
 const nodemailer = require('nodemailer');
@@ -27,7 +27,7 @@ let sendEmail = (text, to) => {
             logger.writeLog('Message NOT sent ERROR: ' + error)
             return error
         }
-        logger.writeLog('Message sent: ' + info.response)
+        logger.writeLog('Message sent: ' + info.response+", sent to:" +JSON.strigify(to))
     });
 }
 
@@ -54,7 +54,7 @@ setInterval(()=>{
 
     curl.on( 'error',error => {
         let date = new Date();
-        let text = date.toLocaleString()+', ' + websiteurl+' is down, connection timeout set to '+parseInt(timeout/1000)+' sec'
+        let text = date.toLocaleString()+', ' + websiteurl+' is down, connection timeout set to '+parseInt(timeout/1000)+' sec, the error: '+JSON.stringify(error)
 
         if(++counter > 1){ // notify competents level 1 about the fall down
             counter = 0;
