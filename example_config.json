@@ -1,0 +1,16 @@
+{
+    "smtp_options": {
+        "host": "zsigmondszilveszter.website",
+        "port": 587,
+        "secure": true,
+        "requireTLS": true,
+        "tls": {
+            "requestCert": true,
+            "rejectUnauthorized": true
+        },
+        "auth": {
+            "user": "email@zsigmondszilveszter.website",
+            "pass": ""
+        }
+    }
+}
